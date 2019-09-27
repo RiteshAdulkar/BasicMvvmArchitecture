@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BasicMvvmArchitectureSample</string>
+    <string name="rating">rating: %1$s/10</string>
+</resources>
