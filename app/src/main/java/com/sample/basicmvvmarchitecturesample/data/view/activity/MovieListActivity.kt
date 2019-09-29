@@ -67,7 +67,6 @@ open class MovieListActivity : AppCompatActivity() {
         if (response == null) {
             return
         }
-
         if (movieAdapter == null) {
             movieAdapter = MovieAdapter(response)
         } else {
