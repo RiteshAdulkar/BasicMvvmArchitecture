@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import com.sample.basicmvvmarchitecturesample.data.contracts.MovieListDataSource
 import com.sample.basicmvvmarchitecturesample.data.models.Movie
 import com.sample.basicmvvmarchitecturesample.data.sourcemock.DataSourceMovieMock
+import javax.inject.Inject
 
-class MovieRepository(mockDataSource: DataSourceMovieMock) : MovieListDataSource {
-
-    var dataSource: MovieListDataSource = mockDataSource
+class MovieRepository @Inject constructor(val mockDataSource: DataSourceMovieMock) :
+    MovieListDataSource {
 
     override fun getMovies(): LiveData<MutableList<Movie>> {
-        return dataSource.getMovies()
+        return mockDataSource.getMovies()
     }
 
 }

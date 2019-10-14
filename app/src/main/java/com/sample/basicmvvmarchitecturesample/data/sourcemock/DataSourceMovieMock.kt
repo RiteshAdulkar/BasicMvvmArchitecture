@@ -18,12 +18,9 @@ import com.google.gson.Gson
 open class DataSourceMovieMock : MovieListDataSource {
 
     private val movieListLiveData = MutableLiveData<MutableList<Movie>>()
-    lateinit var isLoader: MutableLiveData<Boolean>
 
     override fun getMovies(): LiveData<MutableList<Movie>> {
         movieListLiveData.value = MockGenerator.getMovies()
-        val data = Gson().toJson(MockGenerator.getMovies())
-
         return movieListLiveData
     }
 }
